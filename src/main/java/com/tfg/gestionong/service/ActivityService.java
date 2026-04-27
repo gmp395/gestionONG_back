@@ -2,7 +2,11 @@ package com.tfg.gestionong.service;
 
 import com.tfg.gestionong.model.Activity;
 
+import java.util.List;
+
 public interface ActivityService {
+
+    List<Activity> getAllActivities();
 
     Activity createActivity(Activity activity);
 

@@ -4,14 +4,23 @@ import com.tfg.gestionong.model.User;
 import com.tfg.gestionong.service.UsersService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/users")
+@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 public class UsersController {
 
     private final UsersService usersService;
+
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(usersService.getAllUsers());
+    }
 
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User userToCreate) {

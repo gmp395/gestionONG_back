@@ -5,11 +5,18 @@ import com.tfg.gestionong.repository.UsersRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class UsersServiceImpl implements UsersService {
 
     private final UsersRepository repository;
+
+    @Override
+    public List<User> getAllUsers() {
+        return repository.findAll();
+    }
 
     @Override
     public User createUser(User user) {
