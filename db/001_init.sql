@@ -14,6 +14,8 @@ CREATE TABLE activities (
                             title VARCHAR(200) NOT NULL,
                             description TEXT,
                             location VARCHAR(255),
+                            image_url VARCHAR(500),
+                            difficulty VARCHAR(100),
                             activity_date DATETIME NOT NULL,
                             max_participants INT DEFAULT 0,
                             category ENUM('social', 'ambiental', 'educativa', 'salud') DEFAULT 'social',
@@ -50,7 +52,7 @@ INSERT INTO users (name, email, password, phone_number, birth_date, about_me, ro
     ('Sofía Morales', 'sofia.m@email.com', '$2y$10$e0MYzXy...', '655666777', '1993-09-09', 'Psicóloga especializada en apoyo emocional a personas mayores.', 'volunteer'),
     ('Admin ONG', 'admin@ong.com', '$2y$10$e0MYzXy...', '600000000', '1980-01-01', 'Administrador de la plataforma.', 'admin');
 
-INSERT INTO activities (title, description, location, activity_date, max_participants, category, status) VALUES
-    ('Reforestación del Bosque Local', 'Plantación de 200 árboles autóctonos para recuperar la zona afectada por el incendio.', 'Parque Natural', '2026-05-10 09:00:00', 50, 'ambiental', 'programada'),
-    ('Taller de Lectura para Niños', 'Lectura de cuentos y actividades lúdicas para fomentar el hábito de lectura en la biblioteca.', 'Biblioteca Municipal', '2026-04-15 17:30:00', 10, 'educativa', 'programada'),
-    ('Reparto de Alimentos Semanal', 'Clasificación y entrega de lotes de provisiones a familias del barrio.', 'Centro Social', '2026-03-25 10:00:00', 15, 'social', 'en curso');
+INSERT INTO activities (title, description, location, image_url, difficulty, activity_date, max_participants, category, status) VALUES
+    ('Reforestación del Bosque Local', 'Plantación de 200 árboles autóctonos para recuperar la zona afectada por el incendio.', 'Parque Natural', '', NULL, '2026-05-10 09:00:00', 50, 'ambiental', 'programada'),
+    ('Taller de Lectura para Niños', 'Lectura de cuentos y actividades lúdicas para fomentar el hábito de lectura en la biblioteca.', 'Biblioteca Municipal', '', NULL, '2026-04-15 17:30:00', 10, 'educativa', 'programada'),
+    ('Reparto de Alimentos Semanal', 'Clasificación y entrega de lotes de provisiones a familias del barrio.', 'Centro Social', '', NULL, '2026-03-25 10:00:00', 15, 'social', 'en curso');
