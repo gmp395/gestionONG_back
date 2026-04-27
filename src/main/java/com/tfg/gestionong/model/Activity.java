@@ -26,6 +26,10 @@ public class Activity {
 
     private String location;
 
+    private String imageUrl;
+
+    private String difficulty;
+
     @Column(nullable = false)
     private LocalDateTime activityDate;
 
